@@ -3,11 +3,27 @@ version: 2.1
 jobs:
   build-and-test:
     machine:
-    image: ubuntu-2204:2024.11.1
+      image: ubuntu-2004:202104-01
+
     steps:
       - checkout
-      - run: make deps
-      - run: make test
+
+      # Dodanie lintera
+      - run:
+          name: Run linter (flake8)
+          command: |
+            pip install flake8
+            flake8 .
+
+      # Instalacja zależności
+      - run:
+          name: Install dependencies
+          command: make deps
+
+      # Uruchomienie testów
+      - run:
+          name: Run tests
+          command: make test
 
 workflows:
   basic:
