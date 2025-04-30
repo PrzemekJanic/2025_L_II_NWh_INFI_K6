@@ -4,5 +4,5 @@ if __name__ == "__main__":
     app.run()
 
 
-result = add_numbers(10, "5")  
+result = add_numbers(10, 5)  
 print(result)
