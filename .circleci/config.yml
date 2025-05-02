@@ -8,19 +8,16 @@ jobs:
     steps:
       - checkout
 
-      # Dodanie lintera
       - run:
           name: Run linter (flake8)
           command: |
             pip install flake8
             flake8 .
 
-      # Instalacja zależności
       - run:
           name: Install dependencies
           command: make deps
 
-      # Uruchomienie testów
       - run:
           name: Run tests
           command: make test
