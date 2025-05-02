@@ -1,7 +1,7 @@
 from hello_world import app
-from hello_world.formater import add_numbers  # <-- zakładamy, że tam jest funkcja
+from hello_world.formater import add_numbers
 
-result = add_numbers(10, 5)
+result = add_numbers(10, 5)  
 print(result)
 
 if __name__ == "__main__":
