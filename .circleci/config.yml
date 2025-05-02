@@ -21,6 +21,8 @@ jobs:
       - run:
           name: Run tests
           command: make test
+          
+       - run: make docker_build
 
 workflows:
   basic:
