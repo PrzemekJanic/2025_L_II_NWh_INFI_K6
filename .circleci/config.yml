@@ -6,25 +6,11 @@ jobs:
       image: ubuntu-2204:2024.11.1
 
     steps:
-      - checkout
-
-      - run:
-          name: Run linter (flake8)
-          command: |
-            pip install flake8
-            flake8 .
-
-      - run:
-          name: Install dependencies
-          command: make deps
-
-      - run:
-          name: Run tests
-          command: make test
-          
-      - run:
-          name: Build Docker image
-          command: make docker_build  # <-- poprawione wcięcie
+      -  checkout
+       - run: make deps
+       - run: make lint
+       - run: make test
+       - run: make docker_build
 
 workflows:
   basic:
