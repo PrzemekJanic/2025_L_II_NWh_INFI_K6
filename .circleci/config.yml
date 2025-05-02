@@ -22,7 +22,9 @@ jobs:
           name: Run tests
           command: make test
           
-       - run: make docker_build
+      - run:
+          name: Build Docker image
+          command: make docker_build  # <-- poprawione wcięcie
 
 workflows:
   basic:
